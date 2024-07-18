@@ -10,7 +10,7 @@ describe("Verify Login functionality", () => {
   beforeEach("Navigate to the login page", () => {
     loginPage.visitLoginPage();
   });
-  it("Verify the register page", () => {
+  it("Verify the login page", () => {
     loginPage.signInTitle.should("be.visible");
     loginPage.emailInput.should("be.visible");
     loginPage.passwordInput.should("be.visible");
