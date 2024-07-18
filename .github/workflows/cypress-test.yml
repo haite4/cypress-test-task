@@ -8,37 +8,38 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install modules
+        run: npm ci
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
-        run: npm ci
         with:
           command: npm run cypress:run 
           browser: chrome
           continue-on-error: true
           headless: true
 
-      - name: Upload artifact 
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: cypress-execution-report
-          path: cypress/reports/html
-          retention-days: 30
+      # - name: Upload artifact 
+      #   uses: actions/upload-artifact@v4
+      #   if: always()
+      #   with:
+      #     name: cypress-execution-report
+      #     path: cypress/reports/html
+      #     retention-days: 30
 
-      - name: Copy test execution videos
-        run: |
-        mkdir public
-        cp -r cypress/videos  public/videos
+      # - name: Copy test execution videos
+      #   run: |
+      #   mkdir public
+      #   cp -r cypress/videos  public/videos
       
-      - name: Merge test results into one
-        run: npm run report:merge
+      # - name: Merge test results into one
+      #   run: npm run report:merge
       
-      - name: Generate HTML report 
-        run: npm run report:generate
+      # - name: Generate HTML report 
+      #   run: npm run report:generate
 
-      - name: Deploy report page
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+      # - name: Deploy report page
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./public
