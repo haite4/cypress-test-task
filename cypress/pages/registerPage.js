@@ -40,7 +40,7 @@ class registerPage {
   clearRegisterInputField() {
     this.userNameInput.should("not.be.disabled").should("be.visible").clear();
     this.emailInput.should("not.be.disabled").should("be.visible").clear();
-    // this.passwordInput.should("not.be.disabled").should("be.visible").clear();
+    this.passwordInput.should("not.be.disabled").should("be.visible").clear();
   }
 }
 

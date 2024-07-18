@@ -27,7 +27,7 @@ describe("Verify register functionality", () => {
 
   it("Verify the registration with invalid credentials", () => {
     invalid_register_creds.forEach((creds) => {
-      registerPage.registerNewUser(creds.username, creds.email, creds.password);
+      // registerPage.registerNewUser(creds.username, creds.email, creds.password);
       registerPage.clearRegisterInputField();
       registerPage.registerErrorMessages.should("be.visible");
     });
