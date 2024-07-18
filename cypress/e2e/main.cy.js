@@ -23,11 +23,11 @@ describe("Verify all elements on the main page works correctly", () => {
     mainPage.eachTags.should("be.visible");
   });
 
-  it("should have visible pagination elements", () => {
+  it("Verify the visibility of the  pagination elements", () => {
     mainPage.pageItem.first().scrollIntoView({timeout:3000});
     mainPage.pageItem.should("be.visible");
   });
-  it("should navigate through pagination correctly", () => {
+  it("Verify Correct Pagination Navigation", () => {
     mainPage.pageItem.first().scrollIntoView({ force: true });
     mainPage.pageItem.then((pages) => {
       const pageCount = pages.length;
