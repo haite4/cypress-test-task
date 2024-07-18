@@ -1,0 +1,6 @@
+reports/
+screenshot/
+node_modules/
+downloads/
+.env
+.vscode/
