@@ -11,15 +11,12 @@ jobs:
       - name: Install modules
         run: npm ci
 
-      - name: Verify Cypress Record Key
-        run: echo $CYPRESS_RECORD_KEY
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
           record: true
+          
+        run: npx cypress run --record --key $CYPRESS_RECORD_KEY
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
