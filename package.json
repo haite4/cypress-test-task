@@ -1,10 +1,10 @@
 {
   "scripts": {
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
+    "cypress:run": "cypress run --config-file configs/cypress.config.js",
     "test:chrome": "cypress run --browser chrome",
     "test:firefox": "cypress run --browser firefox",
-    "test:mobile": "cypress run --config-file  cypress/config/cypress-mobile.config.js",
+    "test:mobile": "cypress run --config-file  configs/cypress-mobile.config.js",
     "pretest": "npm install",
     "cleancache": "rm -rf node_modules/.cache"
   },
