@@ -3,6 +3,7 @@ const mainPage = require("../pages/mainPage");
 const navElements = ["app.login", "app.home", "app.register"];
 
 describe("Verify all elements on the main page works correctly", () => {
+  
   beforeEach("navigate to the main page", () => {
     mainPage.visitMainPage();
   });
