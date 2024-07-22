@@ -25,7 +25,7 @@ describe("Verify Login functionality", () => {
       profileUserName.profileUserName.should("contain.text", cred.username);
     });
   });
-  
+
   it("Veriy the login with invalid credentials", () => {
     for (let i = 0; i < 6; i++) {
       loginPage.login(email, password);
@@ -33,4 +33,5 @@ describe("Verify Login functionality", () => {
       loginPage.loginErrorMessages.should("be.visible");
     }
   });
+  
 });

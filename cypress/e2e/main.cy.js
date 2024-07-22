@@ -30,7 +30,7 @@ describe("Verify all elements on the main page works correctly", () => {
     mainPage.pageItem.first().scrollIntoView({timeout:3000});
     mainPage.pageItem.should("be.visible");
   });
-  
+
   it("Verify Correct Pagination Navigation", () => {
     mainPage.pageItem.first().scrollIntoView({ force: true });
     mainPage.pageItem.then((pages) => {
@@ -52,4 +52,5 @@ describe("Verify all elements on the main page works correctly", () => {
       }
     });
   });
+  
 });
