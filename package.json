@@ -1,15 +1,19 @@
 {
   "scripts": {
-    "cypress:open": "cypress open",
+    "cypress:open": "cypress open --config-file configs/cypress.config.js",
     "cypress:run": "cypress run --config-file configs/cypress.config.js",
-    "test:chrome": "cypress run --browser chrome",
-    "test:firefox": "cypress run --browser firefox",
+    "test:chrome": "cypress run --browser chrome --config-file configs/cypress.config.js",
+    "test:firefox": "cypress run --browser firefox --config-file configs/cypress.config.js",
+    "test:edge": "cypress run --browser edge --config-file configs/cypress.config.js",
     "test:mobile": "cypress run --config-file  configs/cypress-mobile.config.js",
+    "test:login:run": "cypress run --spec cypress/e2e/login.cy.js --config-file configs/cypress.config.js",
+    "test:main:run": "cypress run --spec cypress/e2e/main.cy.js --config-file configs/cypress.config.js", 
+    "test:register:run": "cypress run --spec cypress/e2e/register.cy.js --config-file configs/cypress.config.js",
     "pretest": "npm install",
     "cleancache": "rm -rf node_modules/.cache"
   },
   "devDependencies": {
-    "cypress": "^13.13.0",
+    "cypress": "^13.13.1",
     "mocha": "^10.6.0",
     "mochawesome": "^7.1.3"
   },

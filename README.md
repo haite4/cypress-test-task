@@ -2,7 +2,7 @@
 
 ## Summary
 
-This repository includes automated tests written using Cypress and JavaScript. The tests verify the functionality of elements on the main, login  as well as on the register page.
+This repository includes 11 automated test cases written using the Cypress framework and JavaScript. The tests verify the functionality of elements on the main, login, and register pages of the website [ RealWorld.](https://demo.realworld.io/#/). These tests ensure that critical elements and features of the website are working as expected.
 
 ## Requirements
 
@@ -18,7 +18,7 @@ This repository includes automated tests written using Cypress and JavaScript. T
     ```
 2. Navigate to the project directory:
     ```sh 
-    cd .
+    cd cypress-test-task
     ```
 3. Install dependencies:
     ```sh
@@ -29,11 +29,41 @@ This repository includes automated tests written using Cypress and JavaScript. T
 
 ## Steps to Launch
 
-1.  ```sh
-        npm run cypress:run
-    ```
-2. To run tests with a specific browser (Chromium, Firefox), use:
+1. **Run all Cypress tests in headless mode**:
     ```sh
-    npm run test:chrome
-    npm run test:firefox
+    npm run cypress:run
     ```
+
+2. **Run tests with a specific browser**:
+    - For Chrome:
+        ```sh
+        npm run test:chrome
+        ```
+    - For Firefox:
+        ```sh
+        npm run test:firefox
+        ```
+    - For Edge:
+        ```sh
+        npm run test:edge
+        ```
+
+3. **Open Cypress Test Runner for interactive testing**:
+    ```sh
+    npm run cypress:open
+    ```
+    This command will open the Cypress Test Runner, allowing you to run and debug tests interactively in the Cypress GUI.
+    
+4. **Run tests for specific pages**:
+    - **Login Page Tests**:
+        ```sh
+        npm run test:login:run
+        ```
+    - **Main Page Tests**:
+        ```sh
+        npm run test:main:run
+        ```
+    - **Register Page Tests**:
+        ```sh
+        npm run test:register:run
+        ```
