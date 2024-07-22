@@ -11,6 +11,7 @@ describe("Verify register functionality", () => {
   beforeEach("Navigate to the register page ", () => {
     registerPage.visitRegisterPage();
   });
+  
   it("Verify the register page", () => {
     registerPage.signUpTitle.should("be.visible");
     registerPage.userNameInput.should("be.visible");

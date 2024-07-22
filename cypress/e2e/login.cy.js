@@ -10,6 +10,7 @@ describe("Verify Login functionality", () => {
   beforeEach("Navigate to the login page", () => {
     loginPage.visitLoginPage();
   });
+
   it("Verify the login page", () => {
     loginPage.signInTitle.should("be.visible");
     loginPage.emailInput.should("be.visible");
@@ -17,12 +18,14 @@ describe("Verify Login functionality", () => {
     loginPage.singInButton.should("be.visible");
     loginPage.linkToSignUp.should("contain", "Need an account?");
   });
+
   it("Veriy the login with valid credentials", () => {
     valid_login_cred.forEach((cred) => {
       loginPage.login(cred.email, cred.password);
       profileUserName.profileUserName.should("contain.text", cred.username);
     });
   });
+  
   it("Veriy the login with invalid credentials", () => {
     for (let i = 0; i < 6; i++) {
       loginPage.login(email, password);

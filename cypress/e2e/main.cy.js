@@ -6,18 +6,21 @@ describe("Verify all elements on the main page works correctly", () => {
   beforeEach("navigate to the main page", () => {
     mainPage.visitMainPage();
   });
+
   it("Verify elements on the header displayed correctly", () => {
     mainPage.bannerHeader
       .should("be.visible")
       .should("contain.text", "conduit")
       .should("contain.text", "A place to share your knowledge.");
   });
+
   it("Verify that elements on the navbar visible", () => {
     mainPage.navbarLogo.should("be.visible");
     for (let i = 0; i < navElements.length; i++) {
       mainPage.getNavbarLinks(navElements[i]).should("be.visible");
     }
   });
+
   it("Verify that sidebar and tag displayes", () => {
     mainPage.sideBarBlock.should("be.visible");
     mainPage.eachTags.should("be.visible");
@@ -27,6 +30,7 @@ describe("Verify all elements on the main page works correctly", () => {
     mainPage.pageItem.first().scrollIntoView({timeout:3000});
     mainPage.pageItem.should("be.visible");
   });
+  
   it("Verify Correct Pagination Navigation", () => {
     mainPage.pageItem.first().scrollIntoView({ force: true });
     mainPage.pageItem.then((pages) => {
